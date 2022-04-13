@@ -39,9 +39,9 @@ test_for_success $?
 echo_start
 echo -n "Bootstrap AWS localstack infrastructure"
     npx cdklocal bootstrap >> $LOG 2>&1
-test_for_success $?
+test_for_success $? "allow"
 
 echo_start
 echo -n "Deploy to AWS localstack"
     npx cdklocal deploy --all >> $LOG 2>&1
-test_for_success $?
+test_for_success $? "allow"

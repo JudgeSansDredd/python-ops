@@ -65,7 +65,8 @@ services:
         ipv4_address: 172.11.0.3
 networks:
   insights:
-    name: insights
-    ipam:
-      config:
-        - subnet: 172.11.0.0/24
+    external: true
+  #   name: insights
+  #   ipam:
+  #     config:
+  #       - subnet: 172.11.0.0/24

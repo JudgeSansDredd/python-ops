@@ -1,7 +1,13 @@
 {
   "scripts": {
-    "start-argo": "docker compose -f ./docker-compose.yml -f ../argo-emulator/docker-compose.yml up -d && ./scripts/bootstrap.sh",
-    "start-mep": "docker compose -f ./docker-compose.yml -f ../mep-emulator/docker-compose.yml up -d && ./scripts/bootstrap.sh"
+    "prestart-argo": "npm run create-network",
+    "start-argo": "docker compose -f ./docker-compose.yml -f ../argo-emulator/docker-compose.yml up -d",
+    "poststart-argo": "npm run bootstrap",
+    "prestart-mep": "npm run create-network",
+    "start-mep": "docker compose -f ./docker-compose.yml -f ../mep-emulator/docker-compose.yml up -d",
+    "poststart-mep": "npm run bootstrap",
+    "create-network": "docker network inspect insights >/dev/null 2>&1 || docker network create insights --subnet 172.11.0.0/24",
+    "bootstrap": "./scripts/bootstrap.sh"
   },
   "devDependencies": {
     "aws-cdk": "^2.20.0",

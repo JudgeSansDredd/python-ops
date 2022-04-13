@@ -6,6 +6,15 @@ for the following projects:
 - [argo-emulator](https://github.com/JudgeSansDredd/argo-emulator)
 - [mep-emulator](https://github.com/JudgeSansDredd/mep-emulator)
 
+## M1 Architecture
+
+I have an M1 Mac. Do I need to do something special?
+
+- Of course you do. You'll need to export `DOCKER_DEFAULT_PLATFORM`. (You may want to add it to your profile so you don't forget)
+  ```
+  export DOCKER_DEFAULT_PLATFORM=linux/amd64
+  ```
+
 ## Setup
 
 ### What do I need to do?
