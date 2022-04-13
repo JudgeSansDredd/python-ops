@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "start-mep": "docker compose -f ./docker-compose.yml -f ../mep-emulator/docker-compose.yml up -d && ./scripts/bootstrap.sh",
+    "start-argo": "docker compose -f ./docker-compose.yml -f ../argo-emulator/docker-compose.yml up -d && ./scripts/bootstrap.sh"
+  },
+  "devDependencies": {
+    "aws-cdk": "^2.20.0",
+    "aws-cdk-local": "^2.15.0"
+  },
+  "volta": {
+    "node": "16.14.2",
+    "npm": "8.6.0"
+  }
+}

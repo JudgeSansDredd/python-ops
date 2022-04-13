@@ -1,0 +1,165 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.0.112"
+        }
+      },
+      "insights-messaging-dynamodb": {
+        "id": "insights-messaging-dynamodb",
+        "path": "insights-messaging-dynamodb",
+        "children": {
+          "insights-messaging": {
+            "id": "insights-messaging",
+            "path": "insights-messaging-dynamodb/insights-messaging",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "insights-messaging-dynamodb/insights-messaging/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
+                  "aws:cdk:cloudformation:props": {
+                    "keySchema": [
+                      {
+                        "attributeName": "insights-messaging",
+                        "keyType": "HASH"
+                      }
+                    ],
+                    "attributeDefinitions": [
+                      {
+                        "attributeName": "insights-messaging",
+                        "attributeType": "S"
+                      }
+                    ],
+                    "provisionedThroughput": {
+                      "readCapacityUnits": 5,
+                      "writeCapacityUnits": 5
+                    },
+                    "tableName": "insights-messaging"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_dynamodb.CfnTable",
+                  "version": "2.19.0"
+                }
+              },
+              "ScalingRole": {
+                "id": "ScalingRole",
+                "path": "insights-messaging-dynamodb/insights-messaging/ScalingRole",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.19.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_dynamodb.Table",
+              "version": "2.19.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "insights-messaging-dynamodb/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "insights-messaging-dynamodb/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.19.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "insights-messaging-dynamodb/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnCondition",
+                  "version": "2.19.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.0.112"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.19.0"
+        }
+      },
+      "insights-messaging-s3": {
+        "id": "insights-messaging-s3",
+        "path": "insights-messaging-s3",
+        "children": {
+          "insights-messaging": {
+            "id": "insights-messaging",
+            "path": "insights-messaging-s3/insights-messaging",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "insights-messaging-s3/insights-messaging/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                  "aws:cdk:cloudformation:props": {
+                    "bucketName": "insights-messaging"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                  "version": "2.19.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_s3.Bucket",
+              "version": "2.19.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "insights-messaging-s3/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "insights-messaging-s3/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.19.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "insights-messaging-s3/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnCondition",
+                  "version": "2.19.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.0.112"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.19.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "aws-cdk-lib.App",
+      "version": "2.19.0"
+    }
+  }
+}

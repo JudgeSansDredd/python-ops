@@ -1,0 +1,19 @@
+{
+  "version": "16.0.0",
+  "files": {
+    "55d2eb3738f5eb6a626d72fbe8c12e3b73efa40634b9dc84d71928bc7307c0b8": {
+      "source": {
+        "path": "insights-messaging-dynamodb.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "55d2eb3738f5eb6a626d72fbe8c12e3b73efa40634b9dc84d71928bc7307c0b8.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

@@ -1,0 +1,19 @@
+{
+  "version": "16.0.0",
+  "files": {
+    "77b1f7f5a31fd4ba247bf7bc81d1fed31eb2c17fe68313ed3dc563ae264af4be": {
+      "source": {
+        "path": "insights-messaging-s3.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "77b1f7f5a31fd4ba247bf7bc81d1fed31eb2c17fe68313ed3dc563ae264af4be.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}
