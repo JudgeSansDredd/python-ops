@@ -1,71 +1,75 @@
-# Infrastructure
+# Python-Ops
 
-## Setup localstack config and credentials
+The purpose of this repository is to create docker containers with the infrastructure needed
+for the following projects:
 
-> will modify `~/.aws/config` & `~/.aws/credentials` files
+- argo-emulator
+- mep-emulator
 
-```
-aws configure set region us-east-1 --profile localstack
-aws configure set aws_access_key_id localstack --profile localstack
-aws configure set aws_secret_access_key localstack --profile localstack
-```
+## Setup
 
-<!-- ## Install aws-cdk and aws-cdk-local
+1. Setup localstack config and credentials
 
-Use the npm version so the `aws-cdk-local` wrapper will work. `aws-cdk-local` is a wrapper around `aws-cdk`
+   > will modify `~/.aws/config` & `~/.aws/credentials` files
 
-> **DO NOT** INSTALL IT USING BREW OR APT
+   ```
+   aws configure set region us-east-1 --profile localstack
+   aws configure set aws_access_key_id localstack --profile localstack
+   aws configure set aws_secret_access_key localstack --profile localstack
+   ```
 
-```
-npm install -g aws-cdk aws-cdk-local
-``` -->
+2. Create python environment
 
-## Create python environment
+   ```
+   python -m venv venv
+   source ./venv/bin/activate
+   pip install -r requirements.txt
+   ```
 
-```
-python -m venv venv
-source ./venv/bin/activate
-pip install -r requirements.txt
-```
+   > To leave the python virtual environment, simply run `deactivate`.
+   > You may want to wait, since you'll need to be in the python environment
+   > in a later step, anyway
 
-> To leave the python virtual environment, simply run `deactivate`.
-> You may want to wait, since you'll need to be in the python environment
-> in a later step, anyway
+3. Install node dependencies
 
-## Turn on localstack and other infrastructure
+   ```
+   npm install
+   ```
 
-```
-docker compose up -d
-```
+4. Turn on localstack and other infrastructure
 
-## Using cdk with localstack
+   ```
+   docker compose up -d
+   ```
 
-> If you exited the python virtual environment with `deactivate` earlier,
-> you'll need to re-enter it by running `source ./venv/bin/activate` here.
+5. Using cdk with localstack
 
-```
-source ./venv/bin/activate
+   > If you exited the python virtual environment with `deactivate` earlier,
+   > you'll need to re-enter it by running `source ./venv/bin/activate` here.
 
-npm run cdk-bootstrap
-npm run cdk-deploy-all
+   ```
+   source ./venv/bin/activate
 
-deactivate
-```
+   npm run cdk-bootstrap
+   npm run cdk-deploy-all
 
-# Helpers
+   deactivate
+   ```
 
-create an alias for working with localstack
+## Helpers
 
-```
-# For bash
-echo "alias awsl='aws --profile=localstack --endpoint-url=http://localhost:4566'" >> ~/.bash_profile
+- Create an alias for working with localstack
 
-# For Zsh
-echo "alias awsl='aws --profile=localstack --endpoint-url=http://localhost:4566'" >> ~/.zshrc
-```
+  ```
+  # For bash
+  echo "alias awsl='aws --profile=localstack --endpoint-url=http://localhost:4566'" >> ~/.bash_profile
 
-Usage Example:
+  # For Zsh
+  echo "alias awsl='aws --profile=localstack --endpoint-url=http://localhost:4566'" >> ~/.zshrc
+  ```
 
-```
-awsl dynamodb list-tables
-```
+- Usage Example:
+
+  ```
+  awsl dynamodb list-tables
+  ```
