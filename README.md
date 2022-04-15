@@ -1,10 +1,20 @@
 # Python-Ops
 
-The purpose of this repository is to create docker containers with the infrastructure needed
-for the following projects:
+The purpose of this repository is to create docker containers with the infrastructure needed for the following projects:
+
+> clone the following repos as siblings to the `python-ops` project.
 
 - [argo-emulator](https://github.com/JudgeSansDredd/argo-emulator)
 - [mep-emulator](https://github.com/JudgeSansDredd/mep-emulator)
+
+your project directory structure should look similar to the following:
+
+```
+project-directory
+├── argo-emulator
+├── mep-emulator
+└── python-ops
+```
 
 ## Minimum system requirements
 
@@ -51,7 +61,7 @@ brew install lazydocker
 - #### Linux
 
 ```
- curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash && mv lazydocker /usr/local/bin/
+ curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash && sudo mv lazydocker /usr/local/bin/
 ```
 
 ## M1 Architecture
