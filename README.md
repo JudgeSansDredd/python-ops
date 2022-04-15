@@ -6,6 +6,40 @@ for the following projects:
 - [argo-emulator](https://github.com/JudgeSansDredd/argo-emulator)
 - [mep-emulator](https://github.com/JudgeSansDredd/mep-emulator)
 
+## Minimum system requirements
+
+- [docker](https://docs.docker.com/get-docker/) >= 20.10.12
+- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) >= 2.4.23
+- [nodeJs](https://nodejs.org/en/download/package-manager/) == 16LTS
+
+### PIP
+
+- #### MacOS
+
+```
+python3 -m pip install --user --upgrade pip
+```
+
+- #### Linux (Ubuntu)
+
+```
+sudo apt install python3-pip
+```
+
+### Python Virtualenv
+
+- #### MacOS
+
+```
+python3 -m pip install --user virtualenv
+```
+
+- #### Linux (Ubuntu)
+
+```
+sudo apt install python3.8-venv
+```
+
 ## M1 Architecture
 
 I have an M1 Mac. Do I need to do something special?
