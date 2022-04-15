@@ -40,6 +40,20 @@ python3 -m pip install --user virtualenv
 sudo apt install python3.8-venv
 ```
 
+#### Lazydocker
+
+- #### MacOS
+
+```
+brew install lazydocker
+```
+
+- #### Linux
+
+```
+ curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash && mv lazydocker /usr/local/bin/
+```
+
 ## M1 Architecture
 
 I have an M1 Mac. Do I need to do something special?
